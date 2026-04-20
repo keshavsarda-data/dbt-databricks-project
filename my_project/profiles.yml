@@ -5,6 +5,6 @@ my_project:
       type: databricks
       catalog: dev
       schema: analytics
-      host: <workspace-url>
-      http_path: <sql-warehouse-or-cluster-http-path>
+      host: dbc-88ae0a03-83ca.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/8260bc8671efb896
       token: "{{ env_var('DATABRICKS_TOKEN') }}"
