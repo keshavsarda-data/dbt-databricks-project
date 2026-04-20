@@ -1,0 +1,10 @@
+my_project:
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      catalog: dev
+      schema: analytics
+      host: <workspace-url>
+      http_path: <sql-warehouse-or-cluster-http-path>
+      token: "{{ env_var('DATABRICKS_TOKEN') }}"
