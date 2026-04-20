@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: analytics
+    schema: analytics
+    tables:
+      - name: products_raw
+      - name: product_prices_raw

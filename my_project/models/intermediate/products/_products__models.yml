@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: int_product_pricing_history
+    columns:
+      - name: product_price_id
+        tests:
+          - not_null
+          - unique
+
+  - name: int_orders_with_historical_price
+    columns:
+      - name: order_item_id
+        tests:
+          - not_null
+          - unique
+
+      - name: line_revenue
+        tests:
+          - not_null
+
+  - name: int_product_sales
+    columns:
+      - name: product_id
+        tests:
+          - not_null

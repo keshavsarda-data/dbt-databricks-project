@@ -1,0 +1,25 @@
+version: 2
+models:
+  - name: stg_customers
+    description: "Cleaned customer staging model."
+    columns:
+      - name: customer_id
+        description: "Unique identifier for each customer."
+        tests:
+          - not_null
+          - unique
+  - name: stg_customer_addresses
+    description: "Cleaned customer addresses staging model."
+    columns:
+      - name: address_id
+        description: "Unique identifier for each address."
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "Foreign key to the customers table."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id

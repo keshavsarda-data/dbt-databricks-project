@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: fct_product_revenue
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+
+      - name: product_id
+        tests:
+          - not_null
+
+      - name: line_revenue
+        tests:
+          - not_null
+
+  - name: fct_yearly_product_revenue
+    columns:
+      - name: revenue_year
+        tests:
+          - not_null
+
+      - name: total_revenue
+        tests:
+          - not_null
+
+  - name: fct_monthly_sales
+    columns:
+      - name: sales_year
+        tests:
+          - not_null
+
+      - name: sales_month
+        tests:
+          - not_null
+
+  - name: fct_profitability
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+
+      - name: total_revenue
+        tests:
+          - not_null

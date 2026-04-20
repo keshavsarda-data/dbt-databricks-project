@@ -1,0 +1,46 @@
+version: 2
+models:
+  - name: stg_orders
+    description: "Cleaned orders staging model."
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "Foreign key to the customers table."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+  - name: stg_order_items
+    description: "Cleaned order items staging model."
+    columns:
+      - name: order_item_id
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        description: "Foreign key to the orders table."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_orders')
+              field: order_id
+    
+  - name: stg_payments
+    description: "Cleaned payments staging model."
+    columns:
+      - name: payment_id
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        description: "Foreign key to the orders table."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_orders')
+              field: order_id
+      

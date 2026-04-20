@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: customer_lifetime_value
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_segment
+        tests:
+          - not_null
+
+  - name: customer_order_summary
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+
+  - name: repeat_customers
+    columns:
+      - name: customer_id
+        tests:
+          - not_null

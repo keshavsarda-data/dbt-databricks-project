@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_products
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_product_prices
+    columns:
+      - name: product_price_id
+        tests:
+          - not_null
+          - unique
+
+      - name: product_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_products')
+              field: product_id
