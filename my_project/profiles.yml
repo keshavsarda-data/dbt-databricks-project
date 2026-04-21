@@ -7,4 +7,4 @@ my_project:
       schema: analytics
       host: dbc-88ae0a03-83ca.cloud.databricks.com
       http_path: /sql/1.0/warehouses/8260bc8671efb896
-      token: dapic7c86983c1a3d868dd6f74fc2b0913af
+      token: 
